@@ -1,0 +1,16 @@
+{% if all_albums %}
+
+    <h2> Here is render</h2>
+    <ul>
+
+        {% for album in all_albums %}
+            <li><a href="{%url 'myapp:details' album.id %}">{{ album.album_title}}</a></li>
+           <!-- <li> <a href="/myapp/{{album.id}}/">{{album.album_title}}</a></li>-->
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3> You dont have any albums </h3>
+
+{% endif %}
+
+
