@@ -1,0 +1,10 @@
+{
+  "realm": "Lms",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "lms",
+  "credentials": {
+    "secret": "683c6fdf-1fab-4bd7-ac2c-46ef2137e5f1"
+  },
+  "use-resource-role-mappings": true
+}

@@ -1,0 +1,22 @@
+Flask-Keycloak Changelog
+========================
+
+
+Version 0.1.1
+-------------
+
+Released on June 25th, 2017
+
+- Keycloak can be imported as a standalone flask_extension library in an application
+- explicit import of app and login_manager removed, much cleaner code
+- Changelog added
+
+
+Version 0.1.0
+-------------
+
+Released on June 18th, 2017
+
+- Initial Keycloak functionality implemented
+- keycloak Blueprint needs to be explicitly registered
+- Keycloak was importing app and login_manager objects

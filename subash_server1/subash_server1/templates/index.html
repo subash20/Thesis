@@ -1,0 +1,42 @@
+<html>
+<p1> Welcome to FH Kiel Student Portal</p1><br>
+<title>My Application</title>
+<body>
+	{% with messages = get_flashed_messages() %} # error ko lagi
+	  {% if messages %}
+	    <ul class=flashes>
+	    {% for message in messages %}
+	      <li>{{ message }}</li>
+	    {% endfor %}
+	    </ul>
+	  {% endif %}
+	{% endwith %}
+	{% block body %}{% endblock %}
+
+	Hi, {{ session["user_info"]["preferred_username"] }}!
+	<br>
+
+	<div>
+		<a href="{{ url_for('protected') }}">Protected</a>
+	</div>
+
+	{% if "can_view" in session["user_roles"]  %}
+		<div>
+			<a href="{{ url_for('view') }}">View</a>
+		</div>
+	{% endif %}
+
+	{% if "can_download" in session["user_roles"]  %}
+		<div>		
+		<a href="{{ url_for('download', filename='image.png') }}" download target="_blank">Download</a>
+		</div>
+	{% endif %}
+
+	<div>
+		<a href="{{ url_for('about') }}">About</a>
+	</div>
+	<div>		
+		<a href="{{ url_for('keycloak.logout') }}">Logout</a>
+	</div>
+</body>
+</html>
